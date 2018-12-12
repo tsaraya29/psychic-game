@@ -9,26 +9,29 @@ document.onkeyup = function(event) {
     
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
+        
     if (userGuess === computerGuess) {
         wins++;
+        chances = 7;
     }
+    else  {
     chances--;   
-    hangman.push(" " + userGuess); 
- 
-     if (chances === 0) {
+    
+    }
+    hangman.push(" " + userGuess); // adds chosen letters to table
+    
+ //reset chances here
+    
+    if (chances < 1) {
+        losses++;
         hangman = [];
-        }
-
-     //2nd if statement here
-     else {
+        chances = 7;
+    }
+        
     document.getElementById("userGuess").innerHTML = userGuess;
     document.getElementById("computerLetter").innerHTML = computerGuess;
     document.getElementById("chances").innerHTML = chances;
     document.getElementById("wins").innerHTML = wins;
     document.getElementById("losses").innerHTML = losses;
-    document.getElementById("hangman").innerHTML = hangman;
-     }
+    document.getElementById("hangman").innerHTML = hangman;      
 };
-/*if (chances === 0){
-    document.getElementById('hangman').innerHTML = "";
-  }*/
