@@ -1,0 +1,21 @@
+body {
+    background-color: lightskyblue;
+}
+.container {
+    background-color: azure;
+    margin-top:20px;
+    width: 60%;
+}
+
+.header {
+    text-align: center;
+    margin: 10px;
+}
+.redtext {
+    color:red;
+    border: dashed 1px lightgrey;
+}
+
+ p {
+    font-family: 'Press Start 2P', cursive;
+}
