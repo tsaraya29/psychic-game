@@ -12,14 +12,23 @@ document.onkeyup = function(event) {
     if (userGuess === computerGuess) {
         wins++;
     }
-   
-    chances--;
+    chances--;   
     hangman.push(" " + userGuess); 
+ 
+     if (chances === 0) {
+        hangman = [];
+        }
+
      //2nd if statement here
+     else {
     document.getElementById("userGuess").innerHTML = userGuess;
     document.getElementById("computerLetter").innerHTML = computerGuess;
     document.getElementById("chances").innerHTML = chances;
     document.getElementById("wins").innerHTML = wins;
     document.getElementById("losses").innerHTML = losses;
     document.getElementById("hangman").innerHTML = hangman;
+     }
 };
+/*if (chances === 0){
+    document.getElementById('hangman').innerHTML = "";
+  }*/
